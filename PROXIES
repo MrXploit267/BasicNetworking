@@ -1,0 +1,6 @@
+-Just a service or device that acts as a mediator in a internet connection
+FOWARD PROXY- Filters outgoing traffic
+  Winsock- NAtive Windows API allows malware to be proxy aware through system proxy default settings
+  Libcurl- Allows firefox to use the same code on any OS, malware will have to pull the firefox proxy settings for it to be proxy aware
+REVERSE PROXY- Filters incoming traffic, listens on an address and fowards it to a closed off network
+TRANSPARENT PROXY- Users dont know
