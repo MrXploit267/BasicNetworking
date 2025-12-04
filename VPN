@@ -1,0 +1,28 @@
+Virtual provate networl
+uses port 
+  TCP/1723 for PPTP connections
+  UDP/500 for IKEv1/2 connections
+
+components
+  client
+  server
+  encryption
+  authentication
+
+protocols
+IPSEC
+ - Uses the Encapsulation Security Payload (esp) protocol port UDP/4500. This protocol provides encryption and optional authentication for IP packets. It encrypts the data payload of each IP packet and optionally adds an authentication header, similar to AH.
+  -Uses the Authentication header (ah) . This protocol provides integrity and authenticity for IP packets but does not provide encryption. It adds an authentication header to each IP packet, which contains a cryptographic checksum that can be used to verify that the packet has not been tampered with.
+  other protocols
+  - Internet Key Exchange, udp/500. IKE is a protocol that is used to establish and maintain secure communication between the VPN client and the VPN server. It is based on the Diffie-Hellman key exchange algorithm, and it is used to negotiate and establish shared secret keys that can be used to encrypt and decrypt the VPN traffic.
+  -Internet protocol, UDP/50-51, This is the primary protocol that provides the foundation for all internet communication. It is used to route packets of data between the VPN client and the VPN server.
+  MODES
+  -Tunnel mode. IPsec encrypts and authenticates the entire IP packet, including the IP header. This is typically used to create a VPN tunnel between two networks.
+  -Transport mode.  IPsec encrypts and authenticates the data payload of each IP packet but does not encrypt the IP header. This is typically used to secure end-to-end communication between two hosts.
+
+  
+PPTP
+Point-to-Point Tunneling Protocol (PPTP) is a network protocol that enables the creation of VPNs by establishing a secure tunnel between the VPN client and server, encapsulating the data transmitted within this tunne
+
+
+
