@@ -1,0 +1,39 @@
+THREE WAY HANDSHAKE 
+TCP makes three sessions to make sure that data is delivered . For that it  utilizes flags(tcp headers)
+ 1.Synchronozation (syn)flag by the client
+    -Negotiable options in the header. Sequence number sync, window size, maximum segment size and selective acknowledgements 
+    -only set on the first packet
+    -enables session establishment by allowin both ends to agree on a sequence number to start communicating  
+  2.srver responds with a tcp packet. It has
+    -SYN flag set for the sequence number negotiation 
+    -ACK flag set to acknowledge the previous SYN flag
+  -The server will also send its required TCP options 
+3. Client responds with a ACK flag of agreement and commection is established
+
+other flags
+1.FIN -  It is used for signaling that the data transfer is finished and the sender is requesting termination of the connection.
+
+TLS HANDSHAKE
+-Client and server exchange hello messages to agree on connection parameters.
+-Client and server exchange necessary cryptographic parameters to establish a premaster secret.
+-Client and server will exchange x.509 certificates and cryptographic information allowing for authentication within the session.
+-Generate a master secret from the premaster secret and exchanged random values.
+-Client and server issue negotiated security parameters to the record layer portion of the TLS protocol.
+-Client and server verify that their peer has calculated the same security parameters and that the handshake occurred without tampering by an attacker.
+
+TCP DUMP
+~tcpdump -D, list all availbale interfaces
+~tcpdump -i <interface>, capture traffic from int, -nn to disable name and port resolution
+~tcpdump -i <interface> -e, to display the ethernet header
+~tcpdump -i <interface> -X, dispplay hex and ascii output
+~tcpdump -i <interface> -nnvXX, combination
+
+i/o
+tcpdump -i <interface> -w pathto/ filename.pcap
+tcpdump -i <interface> -r sameshi
+
+scenarios
+1.basic file capture
+ tcpdump -i wlan0 -nnvw -c 10 /tmp/one.pcap, 10 verbose packets with no resolution
+2.Read from file
+  tcpdump -nnSXr path/to/file, S for absolute sequence numbers with hex/ascii
