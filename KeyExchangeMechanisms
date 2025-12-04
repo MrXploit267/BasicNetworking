@@ -1,0 +1,13 @@
+-Used to exchange cryptographic keys securely bettween parties 
+Deffie-Hellman key exchange
+-which allows two parties to agree on a shared secret key without any prior communication or shared private information
+-classic finite-field DH is generally heavier than elliptic-curve DH (ECDH) at comparable security levels, which can affect low-power or latency-sensitive devices
+
+Elliptic curve DH (ECDH)
+-uses elliptic curve cryptography (ECC) to generate the shared secret key
+
+Rivest-Shamir-Aldeman (RSA)
+- uses the properties of large prime numbers to generate a shared secret key
+
+Elliptic Curve Digital Signature Algorithm
+-uses elliptic curve cryptography (ECC) to generate digital signatures that can authenticate the parties involved in the key exchange.
