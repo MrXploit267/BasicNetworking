@@ -37,3 +37,41 @@ scenarios
  tcpdump -i wlan0 -nnvw -c 10 /tmp/one.pcap, 10 verbose packets with no resolution
 2.Read from file
   tcpdump -nnSXr path/to/file, S for absolute sequence numbers with hex/ascii
+
+TCPDUMP PACKET FILTERING
+
+1. Host filter, Syntax: host [IP]
+sudo tcpdump -i eth0 host <ip>
+-identify with whom this host or server communicates and in which way
+
+2. Source/destination filter,  Syntax: src/dst [host|net|port] [IP|Network 
+sudo tcpdump -i eth0 src host <ip>, sudo tcpdump -i eth0 tcp src port 80,  sudo tcpdump -i eth0 dest net 172.16.146.0/24
+-src/ dest are directions, only traffic from the said direction will be intercepted
+
+3.Protocol filter, syntax: [tcp/udp/icmp]
+sudo tcpdump -i eth0 udp
+-number filter
+sudo tcpdump -i eth0 udp
+
+4.Portrange , syntax: portrange [range]
+sudo tcpdump -i eth0 portrange 0-1024
+
+othwr filters include and, or(||), not(!), greater,less
+
+The -v, -X, and -e switches can help you increase the amount of data captured, while the -c, -n, -s, -S, and -q switches can help reduce and modify the amount of data written and seen.
+
+Many handy options that can be used but are not always directly valuable for everyone are the -A and -l switches. A will show only the ASCII text after the packet line, instead of both ASCII and Hex. L will tell tcpdump to output packets in a different mode. L will line buffer instead of pooling and pushing in chunks. It allows us to send the output directly to another tool such as grep using a pipe |.
+
+protocol rfc links
+Link	Description
+IP Protocol	RFC 791 describes IP and its functionality.
+ICMP Protocol	RFC 792 describes ICMP and its functionality.
+TCP Protocol	RFC 793 describes the TCP protocol and how it functions.
+UDP Protocol	RFC 768 describes UDP and how it operates.
+RFC Quick Links	This Wikipedia article contains a large list of protocols tied to the RFC that explains their implementation.
+
+
+
+
+
+
