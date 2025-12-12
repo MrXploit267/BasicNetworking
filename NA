@@ -71,6 +71,10 @@ UDP Protocol	RFC 768 describes UDP and how it operates.
 RFC Quick Links	This Wikipedia article contains a large list of protocols tied to the RFC that explains their implementation.
 
 
+exercise 
+-read tcpdump from a file without flags
+tcpdump -r <filenamme>
+
 
 
 
